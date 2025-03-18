@@ -8,8 +8,8 @@ wish my luck!!
 
 ~~~~~~some important info~~~~~~
 branches should be named as follows:
-    admin features: /v1/admin/feature-name/
-    security features: /v1/security/feature-name
+    admin features: admin/feature-name
+    security features: security/feature-name
     (add other stuff as necessary)
 
 filing system:
