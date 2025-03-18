@@ -38,6 +38,7 @@ functions and technicality:
         - list overview
         - trash view
         - retrieve trash
+        - clear all (lists and tasks)
 
 
 that's all for now!! more info will be added as i progress, see you guys soon!
