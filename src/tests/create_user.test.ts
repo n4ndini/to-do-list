@@ -1,11 +1,12 @@
 import { getData } from "../../dataStore";
+import { clear } from "../implementation/clear";
 import { create_user } from "../implementation/create_user";
 /* 
 email not unique
 email is invalid
 
 password too long (more than 20)
-password too short (less than 5)
+password too short (less than 8)
 password not strong enough
     no number, no letter
 
@@ -25,6 +26,7 @@ describe("Tests for create_user", () => {
     let lastName: string;
 
     beforeEach(() => {
+        clear();
         email = 'test123@gmail.com';
         password = 'Testpassword123!';
         firstName = 'Jane';
@@ -62,14 +64,14 @@ describe("Tests for create_user", () => {
         });
 
         test("Password has no number", () => {
-            password = "Nonums"
+            password = "Nonumbers"
             const errorCheck = create_user(email, password, firstName, lastName);
 
             expect(errorCheck).toStrictEqual({ error: expect.any(String) });
         });
 
         test("Password has no letter", () => {
-            password = "123456"
+            password = "12345678"
             const errorCheck = create_user(email, password, firstName, lastName);
 
             expect(errorCheck).toStrictEqual({ error: expect.any(String) });

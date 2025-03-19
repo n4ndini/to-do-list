@@ -1,3 +1,4 @@
+// Interfaces
 export interface UserID {
     userID: number;
 }
@@ -13,3 +14,10 @@ export interface User {
 export interface DataStore {
     users: User[];
 }
+
+export interface Error {
+    error: string;
+}
+
+// Return Types
+export type CreateUserReturn = Error | UserID

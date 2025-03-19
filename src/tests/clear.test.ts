@@ -17,8 +17,11 @@ describe("Tests for clear", () => {
         create_user(email, password, firstName, lastName);
     });
 
-    test("Success Case: Cleared successfully", () => {
-        clear();
-        expect(data).toStrictEqual({});
+    describe("Success Case", () => {
+        test("Success Case: Cleared successfully", () => {
+            clear();
+            expect(data).toStrictEqual({});
+        });
+
     });
 });
