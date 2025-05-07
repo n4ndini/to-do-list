@@ -2,15 +2,14 @@
 hey what's up
 this is going to be my first project
 it's going to be a to do list
-and i'm trying to make it like notion
-wish my luck!!
+wish me luck!!
 
 
 ~~~~~~some important info~~~~~~
 branches should be named as follows:
-    admin features: /v1/admin/feature-name/
+    admin features: /v1/admin/feature-name
     security features: /v1/security/feature-name
-    (add other stuff as necessary)
+    task features: /v1/security/feature-name
 
 filing system:
     the following folders should be in this project:
@@ -26,18 +25,15 @@ functions and technicality:
         - create user
         - login
         - password update
-        - email update
         - username update
     
     --- functionality ---
         - create list
-        - delete list (delete whole or all tasks completed)
+        - delete list (delete whole list)
         - create task
         - delete task (checking off task)
         - task overview
         - list overview
-        - trash view
-        - retrieve trash
 
 
 that's all for now!! more info will be added as i progress, see you guys soon!
