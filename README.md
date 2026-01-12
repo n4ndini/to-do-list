@@ -4,8 +4,6 @@ this is going to be my first project
 it's going to be a to do list
 wish me luck!!
 
-
-~~~~~~some important info~~~~~~
 branches should be named as follows:
     admin features: /v1/admin/feature-name
     security features: /v1/security/feature-name
@@ -26,17 +24,18 @@ functions and technicality:
         - login
         - password update
         - username update
-    
     --- functionality ---
         - create list
-        - delete list (delete whole list)
+        - delete list (deletes whole list)
         - create task
         - delete task (checking off task)
         - task overview
         - list overview
+        
 
 
 that's all for now!! more info will be added as i progress, see you guys soon!
+
 
 
 
