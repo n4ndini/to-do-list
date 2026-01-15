@@ -1,8 +1,4 @@
 # to-do-list
-hey what's up
-this is going to be my first project
-it's going to be a to do list
-wish me luck!!
 
 branches should be named as follows:
 
