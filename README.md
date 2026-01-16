@@ -7,9 +7,8 @@ wish me luck!!
 
 ~~~~~~some important info~~~~~~
 branches should be named as follows:
-    dashboard features: v1/dashboard/feature-name
-    list features: v1/list/feature-name
     task features: v1/tasks/feature-name
+    calendar features: v1/calendar/feature-name
     bin features: v1/bin/feature-name
 
 filing system:
