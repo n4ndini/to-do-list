@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>To-do List</title>
     <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
   <body>
@@ -24,34 +25,81 @@
 
         <h1>Dashboard</h1>
 
+        <form class="taskBar" id="taskForm">
+            <input
+                class="taskBarInput"
+                type="text"
+                placeholder="Enter task..."
+                aria-label="Enter task"
+            />
+            <button class="taskBarAdd" type="submit" aria-label="Add task">+</button>
+        </form>
+
         <div class="incompleteTasks">
+            <!-- Task 1 -->
             <div class="incompleteRow">
-                <!-- Title and date-->
-                <p class="incompleteText">Incomplete Task</p>
-                <p class="incompleteDate">16/01/26</p>
-                <button class="iconBtn">
-                    <img src="assets/calendar.png" alt="calendarIcon">
-                </button>
+                <!-- Title and Date -->
+                <div class="incompleteText">
+                    <p class="taskTitle">Incomplete Task</p>
+                
+                    <div class="taskDate">
+                        <img src="assets/calendar.png" alt="calendar">
+                        <p>16/01/26</p>
+                    </div>
+                </div>
 
                 <!-- Buttons -->
                 <div class="incompleteActions">
-                    <!-- Completed -->
-                    <button class="iconBtn">
-                        <img src="assets/complete.png" alt="check">
-                    </button>
-
                     <!-- Edit -->
-                    <button class="iconBtn">
+                    <button class="iconBtn" aria-label="edit">
                         <img src="assets/edit.png" alt="edit">
                     </button>
 
+                    <!-- Complete -->
+                    <button class="iconBtn" aria-label="check">
+                        <img src="assets/complete.png" alt="complete">
+                    </button>
+
                     <!-- Delete -->
-                    <button class="iconBtn">
-                        <img src="assets/bin.png" alt="delete">
+                    <button class="iconBtn" aria-label="bin">
+                        <img src="assets/bin.png" alt="bin">
                     </button>
 
                 </div>
             </div>
+
+            <!-- Task 2 -->
+            <div class="incompleteRow">
+                <!-- Title and Date -->
+                <div class="incompleteText">
+                    <p class="taskTitle">Incomplete Task</p>
+                
+                    <div class="taskDate">
+                        <img src="assets/calendar.png" alt="calendar">
+                        <p>16/01/26</p>
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="incompleteActions">
+                    <!-- Edit -->
+                    <button class="iconBtn" aria-label="edit">
+                        <img src="assets/edit.png" alt="edit">
+                    </button>
+
+                    <!-- Complete -->
+                    <button class="iconBtn" aria-label="check">
+                        <img src="assets/complete.png" alt="complete">
+                    </button>
+
+                    <!-- Delete -->
+                    <button class="iconBtn" aria-label="bin">
+                        <img src="assets/bin.png" alt="bin">
+                    </button>
+
+                </div>
+            </div>
+
         </div>
 
     </div>
