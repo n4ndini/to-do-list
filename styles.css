@@ -111,7 +111,7 @@ h1 {
 .incompleteRow {
     width: 100%;
     max-width: 1000px;
-    min-height: 50px;
+    min-height: 80px;
 
     display: flex;
     align-items: center;
@@ -211,7 +211,7 @@ h1 {
 .taskBarAdd:hover {
     background: rgba(255, 255, 255, 0.22);
 }
-  
+
 
 
 
