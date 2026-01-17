@@ -159,7 +159,7 @@ h1 {
     padding-right: 10px;
 }
 .taskBar {
-    width: 100%;
+    width: 90%;
     max-width: 1000px;
     min-height: 50px;
 
@@ -188,6 +188,8 @@ h1 {
     font-family: 'Pixelify Sans';
     font-size: 18px;
     color: #FFFFFF;
+
+    padding-top: 15px;
 }
 .taskBarInput::placeholder {
     color: rgba(255, 255, 255, 0.7);

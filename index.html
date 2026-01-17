@@ -25,14 +25,10 @@
 
         <h1>Dashboard</h1>
 
-        <form class="taskBar" id="taskForm">
-            <input
-                class="taskBarInput"
-                type="text"
-                placeholder="Enter task..."
-                aria-label="Enter task"
-            />
-            <button class="taskBarAdd" type="submit" aria-label="Add task">+</button>
+        <form class="taskBar" id="taskForm" onsubmit="return false">
+            <textarea class="taskBarInput" placeholder="Enter task..."></textarea>
+
+            <button class="taskBarAdd" onclick="updateUI()">+</button>
         </form>
 
         <div class="incompleteTasks">
@@ -51,49 +47,17 @@
                 <!-- Buttons -->
                 <div class="incompleteActions">
                     <!-- Edit -->
-                    <button class="iconBtn" aria-label="edit">
+                    <button class="iconBtn" onclick="editTask()">
                         <img src="assets/edit.png" alt="edit">
                     </button>
 
                     <!-- Complete -->
-                    <button class="iconBtn" aria-label="check">
+                    <button class="iconBtn" onclick="completeTask()">
                         <img src="assets/complete.png" alt="complete">
                     </button>
 
                     <!-- Delete -->
-                    <button class="iconBtn" aria-label="bin">
-                        <img src="assets/bin.png" alt="bin">
-                    </button>
-
-                </div>
-            </div>
-
-            <!-- Task 2 -->
-            <div class="incompleteRow">
-                <!-- Title and Date -->
-                <div class="incompleteText">
-                    <p class="taskTitle">Incomplete Task</p>
-                
-                    <div class="taskDate">
-                        <img src="assets/calendar.png" alt="calendar">
-                        <p>16/01/26</p>
-                    </div>
-                </div>
-
-                <!-- Buttons -->
-                <div class="incompleteActions">
-                    <!-- Edit -->
-                    <button class="iconBtn" aria-label="edit">
-                        <img src="assets/edit.png" alt="edit">
-                    </button>
-
-                    <!-- Complete -->
-                    <button class="iconBtn" aria-label="check">
-                        <img src="assets/complete.png" alt="complete">
-                    </button>
-
-                    <!-- Delete -->
-                    <button class="iconBtn" aria-label="bin">
+                    <button class="iconBtn" onclick="deleteTask()">
                         <img src="assets/bin.png" alt="bin">
                     </button>
 
