@@ -27,44 +27,11 @@
 
         <form class="taskBar" id="taskForm" onsubmit="return false">
             <textarea class="taskBarInput" placeholder="Enter task..."></textarea>
-
-            <button class="taskBarAdd" onclick="updateUI()">+</button>
+            <input class="taskBarDate" type="date" />
+            <button class="taskBarAdd" onclick="addTask()">+</button>
         </form>
 
-        <div class="incompleteTasks">
-            <!-- Task 1 -->
-            <div class="incompleteRow">
-                <!-- Title and Date -->
-                <div class="incompleteText">
-                    <p class="taskTitle">Incomplete Task</p>
-                
-                    <div class="taskDate">
-                        <img src="assets/calendar.png" alt="calendar">
-                        <p>16/01/26</p>
-                    </div>
-                </div>
-
-                <!-- Buttons -->
-                <div class="incompleteActions">
-                    <!-- Edit -->
-                    <button class="iconBtn" onclick="editTask()">
-                        <img src="assets/edit.png" alt="edit">
-                    </button>
-
-                    <!-- Complete -->
-                    <button class="iconBtn" onclick="completeTask()">
-                        <img src="assets/complete.png" alt="complete">
-                    </button>
-
-                    <!-- Delete -->
-                    <button class="iconBtn" onclick="deleteTask()">
-                        <img src="assets/bin.png" alt="bin">
-                    </button>
-
-                </div>
-            </div>
-
-        </div>
+        <div class="incompleteTasks"></div>
 
     </div>
 

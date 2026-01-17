@@ -1,13 +1,15 @@
 const textarea = document.querySelector('textarea');
 const addBtn = document.querySelector('.taskBarAdd');
 const taskContainer = document.querySelector('.incompleteTasks');
+const dateInput = document.querySelector('.taskBarDate');
 
 let todoList = [];
+let bin = [];
 
 
-function updateUI() {
+function updatedashboardUI() {
     let newInnerHTML = '';
-    todoList.forEach((todoElement) => {
+    todoList.forEach((todoElement, todoIndex) => {
         newInnerHTML += `            
             <div class="incompleteRow">
                 <div class="incompleteText">
@@ -20,15 +22,11 @@ function updateUI() {
                 </div>
 
                 <div class="incompleteActions">
-                    <button class="iconBtn" onclick="editTask()">
+                    <button class="iconBtn" onclick="editTask(${todoIndex})">
                         <img src="assets/edit.png" alt="edit">
                     </button>
 
-                    <button class="iconBtn" onclick="completeTask()">
-                        <img src="assets/complete.png" alt="complete">
-                    </button>
-
-                    <button class="iconBtn" onclick="deleteTask()">
+                    <button class="iconBtn" onclick="deleteTask(${todoIndex})">
                         <img src="assets/bin.png" alt="bin">
                     </button>
 
@@ -42,34 +40,31 @@ function updateUI() {
 
 function addTask() {
     const todo = textarea.value;
+    const date = dateInput.value;
     if (!todo) { return; }
-
-    const date = new Date();
-    const formattedDate = date.toLocaleDateString('en-GB', {
-        day: '2-digit',
-        month: '2-digit',
-        year: '2-digit'
-    });
 
     todoList.push({
         name: todo,
-        date: formattedDate,
+        date: date,
     });
     
     textarea.value = '';
-    updateUI();
+    dateInput.value = '';
+    updatedashboardUI();
 }
 
-addBtn.addEventListener('click', addTask);
+function editTask(index) {
+    textarea.value = todoList[index].name;
+    dateInput.value = todoList[index].date;
 
-function editTask() {
+    todoList.splice(index, 1);
 
+    updatedashboardUI();
 }
 
-function completeTask() {
-    
-}
+function deleteTask(index) {
+    bin.push(todoList[index]);
 
-function deleteTask() {
-    
+    todoList.splice(index, 1);
+    updatedashboardUI();
 }
