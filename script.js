@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     loadData();
     updateDashboardUI();
+    updateCalendarUI();
     updateTrashUI();
 });
 
@@ -76,9 +77,8 @@ function updateDashboardUI() {
 
     taskContainer.innerHTML = newInnerHTML;
     newInnerHTML = '';
-
+    
     saveData();
-    // localStorage.setItem('todos', JSON.stringify({ todoList }));
 }
 
 function addTask() {
@@ -91,7 +91,6 @@ function addTask() {
     textarea.value = '';
     dateInput.value = '';
 
-    saveData();
     updateDashboardUI();
 }
 
@@ -101,7 +100,6 @@ function editTask(index) {
 
     todoList.splice(index, 1);
 
-    saveData();
     updateDashboardUI();
 }
 
@@ -110,7 +108,6 @@ function deleteTask(index) {
 
     todoList.splice(index, 1);
 
-    saveData();
     updateDashboardUI();
     updateTrashUI();
 }
@@ -145,8 +142,8 @@ function updateTrashUI() {
 
     deletedTaskContainer.innerHTML = newInnerHTML;
     newInnerHTML = '';
+    
     saveData();
-    // localStorage.setItem('bin', JSON.stringify({ bin }));
 }
 
 function recoverTask(index) {
@@ -156,7 +153,6 @@ function recoverTask(index) {
 
     bin.splice(index, 1);
 
-    saveData();
     updateTrashUI();
     updateDashboardUI();
 }
@@ -164,8 +160,52 @@ function recoverTask(index) {
 function deleteTaskForever(index) {
     bin.splice(index, 1);
 
-    saveData();
     updateTrashUI();
 }
 
 // Calendar logic
+const daysBoard = document.querySelector('.daysBoard');
+
+function updateCalendarUI() {
+    if (!daysBoard) return;
+    
+    const dates = getDatesISO();
+    let newInnerHTML = '';
+    
+    for (let i = 0; i < 5; i++) {
+        const dayDate = dates[i];
+    
+        newInnerHTML += `
+        <div class="dayCol">
+            <p class="calendarDate">${formatDateGB(dayDate)}</p>
+        `;
+    
+        const tasksForDay = todoList.filter((task) => task.date === dayDate);
+    
+        tasksForDay.forEach((task) => {
+            newInnerHTML += `<div class="calendarTaskCard">${task.name}</div>`;
+        });
+    
+        newInnerHTML += `</div>`;
+    }
+    
+    daysBoard.innerHTML = newInnerHTML;
+}
+
+function formatDateGB(isoDate) {
+    if (!isoDate) return '';
+    return new Date(isoDate).toLocaleDateString('en-GB', {
+      day: '2-digit',
+      month: '2-digit'
+    });
+}
+
+function getDatesISO() {
+    const dates = [];
+    for (let i = 0; i < 5; i++) {
+      const d = new Date();
+      d.setDate(d.getDate() + i);
+      dates.push(d.toISOString().slice(0, 10)); 
+    }
+    return dates;
+  }
