@@ -9,7 +9,7 @@ A simple to-do list application built with Javascript, HTML, and CSS. Manage you
 
 
 ## Link
-[Access the app here!](leafy-to-do-list.vercel.app)
+Access the app here: leafy-to-do-list.vercel.app
 
 ## Getting started
 Important: Ensure you have a web browser installed on your computer. 
@@ -22,5 +22,5 @@ This app can be start up in two ways.
 3. Work away~
 
 **Using web link**
-1. Click on the link provided above
+1. Open the link provided in a browser
 2. Get busy!!
