@@ -1,42 +1,26 @@
-# to-do-list
-hey what's up
-this is going to be my first project
-it's going to be a to do list
-wish me luck!!
+# To-do List App 🍃
+A simple to-do list application built with Javascript, HTML, and CSS. Manage your daily todos as well your weekly overview.
+
+## Features
+- Add, edit, and remove tasks
+- View overview of tasks for current week
+- Recover recently completed tasks
+- Fully responsive design
 
 
-~~~~~~some important info~~~~~~
-branches should be named as follows:
-    task features: v1/tasks/feature-name
-    calendar features: v1/calendar/feature-name
-    bin features: v1/bin/feature-name
+## Link
+[Access the app here!](leafy-to-do-list.vercel.app)
 
-filing system:
-    the following folders should be in this project:
-        - tests
-        - functions
-    each feature that is made needs to have it's own individual test 
-    and implementation file. this is to avoid the unnecessary hassle of 
-    merge conflicts (ifykyk).
+## Getting started
+Important: Ensure you have a web browser installed on your computer. 
 
-functions and technicality:
-(add the route names next to list item once implemented)
-    
-    --- functionality ---
-        - create list
-        - delete list (delete whole list)
-        - edit list
-        - create task
-        - delete task (checking off task)
-        - edit task
-        - task overview (dashboard)
-        - list overview (dashboard)
-        - due today (shows tasks due today on dashboard)
-        - recover list
-        - recover task 
-        - calendar -> view tasks (can be filtered based on list)
+This app can be start up in two ways.
 
-that's all for now!! more info will be added as i progress, see you guys soon!
+**Manually opening**
+1. Clone the project to your local computer
+2. Open the index.html file in your browser
+3. Work away~
 
-
-
+**Using web link**
+1. Click on the link provided above
+2. Get busy!!
