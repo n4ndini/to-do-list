@@ -1,13 +1,53 @@
+// Persistance logic
+// Intialising
+document.addEventListener('DOMContentLoaded', () => {
+    loadData();
+    updateDashboardUI();
+    updateTrashUI();
+});
+
+let todoList = [];
+let bin = [];
+
+function loadData() {
+    const savedTodosRaw = localStorage.getItem('todos');
+    const savedBinRaw = localStorage.getItem('bin');
+  
+    let savedTodos = [];
+    let savedBin = [];
+  
+    try { savedTodos = JSON.parse(savedTodosRaw || '[]'); } catch { savedTodos = []; }
+    try { savedBin = JSON.parse(savedBinRaw || '[]'); } catch { savedBin = []; }
+  
+    if (savedTodos && !Array.isArray(savedTodos) && Array.isArray(savedTodos.todoList)) {
+      savedTodos = savedTodos.todoList;
+    }
+
+    if (savedBin && !Array.isArray(savedBin) && Array.isArray(savedBin.bin)) {
+      savedBin = savedBin.bin;
+    }
+  
+    todoList = Array.isArray(savedTodos) ? savedTodos : [];
+    bin = Array.isArray(savedBin) ? savedBin : [];
+  }
+  
+  
+function saveData() {
+    localStorage.setItem('todos', JSON.stringify(todoList));
+    localStorage.setItem('bin', JSON.stringify(bin));
+}
+
+
+// Dashboard logic
 const textarea = document.querySelector('textarea');
 const addBtn = document.querySelector('.taskBarAdd');
 const taskContainer = document.querySelector('.incompleteTasks');
 const dateInput = document.querySelector('.taskBarDate');
 
-let todoList = [];
-let bin = [];
 
+function updateDashboardUI() {
+    if (!taskContainer) { return; }
 
-function updatedashboardUI() {
     let newInnerHTML = '';
     todoList.forEach((todoElement, todoIndex) => {
         newInnerHTML += `            
@@ -36,6 +76,9 @@ function updatedashboardUI() {
 
     taskContainer.innerHTML = newInnerHTML;
     newInnerHTML = '';
+
+    saveData();
+    // localStorage.setItem('todos', JSON.stringify({ todoList }));
 }
 
 function addTask() {
@@ -43,14 +86,13 @@ function addTask() {
     const date = dateInput.value;
     if (!todo) { return; }
 
-    todoList.push({
-        name: todo,
-        date: date,
-    });
+    todoList.push({name: todo, date: date});
     
     textarea.value = '';
     dateInput.value = '';
-    updatedashboardUI();
+
+    saveData();
+    updateDashboardUI();
 }
 
 function editTask(index) {
@@ -59,12 +101,71 @@ function editTask(index) {
 
     todoList.splice(index, 1);
 
-    updatedashboardUI();
+    saveData();
+    updateDashboardUI();
 }
 
 function deleteTask(index) {
     bin.push(todoList[index]);
 
     todoList.splice(index, 1);
-    updatedashboardUI();
+
+    saveData();
+    updateDashboardUI();
+    updateTrashUI();
 }
+
+
+// Bin logic
+const deletedTaskContainer = document.querySelector(".deletedTasks");
+
+function updateTrashUI() {
+    if (!deletedTaskContainer) { return; }
+    
+    let newInnerHTML = '';
+    bin.forEach((binElement, index) => {
+        newInnerHTML += `
+            <div class="deletedRow">
+              <p class="deletedText">${binElement.name}</p>
+          
+              <!-- Buttons -->
+              <div class="deletedActions">
+                <!-- Recover -->
+                <button class="iconBtn" onclick="recoverTask(${index})">
+                  <img src="assets/recover.png" alt="recover">
+                </button>
+    
+                <!-- Delete -->
+                <button class="iconBtn" onclick="deleteTaskForever(${index})">
+                  <img src="assets/delete.png" alt="delete">
+                </button>
+              </div>
+            </div>`
+    });
+
+    deletedTaskContainer.innerHTML = newInnerHTML;
+    newInnerHTML = '';
+    saveData();
+    // localStorage.setItem('bin', JSON.stringify({ bin }));
+}
+
+function recoverTask(index) {
+    const name = bin[index].name;
+    const date = bin[index].date;
+    todoList.push({name: name, date: date});
+
+    bin.splice(index, 1);
+
+    saveData();
+    updateTrashUI();
+    updateDashboardUI();
+}
+
+function deleteTaskForever(index) {
+    bin.splice(index, 1);
+
+    saveData();
+    updateTrashUI();
+}
+
+// Calendar logic
