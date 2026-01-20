@@ -24,3 +24,11 @@ This app can be start up in two ways.
 **Using web link**
 1. Open the link provided in a browser
 2. Get busy!!
+
+## License
+This project is licensed for educational and personal use only.
+
+Users are free to view, modify, and add to the code for learning or personal projects.
+Commercial use is strictly prohibited: you may not sell, distribute, or use this code in any commercial product or for-profit purpose.
+Any modifications or additions must also comply with this license and cannot be used commercially.
+By using this project, you agree to these terms.
