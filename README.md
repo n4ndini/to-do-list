@@ -1,17 +1,10 @@
 # To-do List App 🍃
 A simple to-do list application built with Javascript, HTML, and CSS. Manage your daily todos as well your weekly overview.
 
-## Features
-- Add, edit, and remove tasks
-- View overview of tasks for current week
-- Recover recently completed tasks
-- Fully responsive design
-
-
-## Link
+## Link 🔗
 Access the app here: leafy-to-do-list.vercel.app
 
-## Getting started
+## Getting started 💻
 Important: Ensure you have a web browser installed on your computer. 
 
 This app can be start up in two ways.
@@ -25,7 +18,13 @@ This app can be start up in two ways.
 1. Open the link provided in a browser
 2. Get busy!!
 
-## License
+## Features ⚙️
+- Add, edit, and remove tasks
+- View overview of tasks for current week
+- Recover recently completed tasks
+- Fully responsive design
+
+## License 📄
 This project is licensed for educational and personal use only.
 
 Users are free to view, modify, and add to the code for learning or personal projects.
